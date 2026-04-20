@@ -1,20 +1,22 @@
 // https://cses.fi/problemset/task/1083
 #include <iostream>
 using namespace std;
- 
+
 int main(){
- 
-    int n,m, sum=0, sum2=0;
+    //resolver con manipulación de bits XOR
+    int n, res=0;
     cin>>n;
+
     for(int i=1; i<=n; i++){
-        sum+=i;
+        res^=i;
     }
- 
-    for(int i=0; i<(n-1); i++){
+
+    for(int i=0; i<n-1; i++){
+        int m;
         cin>>m;
-        sum2+=m;
+        res^=m;
     }
- 
-    printf("%d",(sum-sum2));
+    
+    cout<<res<<endl;
     return 0;
 }
